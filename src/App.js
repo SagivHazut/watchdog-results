@@ -6,7 +6,7 @@ import HomePage from "./components/HomePage.jsx";
 // import AnalyticsPage from "./components/AnalyticsPage.jsx";
 // import SettingsPage from "./components/SettingsPage.jsx";
 // import DatabasePage from "./components/DatabasePage.jsx";
-
+//adding the new routes
 function App() {
   return (
     <Router>
