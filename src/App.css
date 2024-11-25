@@ -1,21 +1,20 @@
 .App {
-  display: flex; /* This ensures the Sidebar and HomePage are side by side */
-  height: 100vh; /* This will make sure the app takes up the full viewport height */
-}
-
-.sidebar {
-  width: 60px; /* Sidebar width */
-  background-color: #333;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 50px 0;
-  position: fixed; /* Ensures the sidebar stays in place */
-  height: 100%; /* Full height of the viewport */
+  height: 100vh;
 }
 
-.homepage {
-  margin-left: 60px; /* Leaves space for the sidebar */
-  padding: 20px;
-  width: 100%; /* Makes sure homepage takes the remaining width */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: var(--header-bg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }

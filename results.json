@@ -1,0 +1,151 @@
+{
+  "config": {
+    "configFile": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/playwright.config.ts",
+    "rootDir": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/src/test-suites",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/src/lib/global-setup.ts",
+    "globalTeardown": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/src/lib/global-teardown.ts",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        {
+          "printSteps": true
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/json/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/playwright-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "crowncoins:chromium:mobile",
+        "name": "crowncoins:chromium:mobile",
+        "testDir": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/src/test-suites/crowncoins",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.47.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "crowncoins/tests/redeem/redeem-credit-card.spec.ts",
+      "file": "crowncoins/tests/redeem/redeem-credit-card.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Redeem via Credit Card",
+          "ok": false,
+          "tags": [
+            "credit-card",
+            "redeem"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "crowncoins:chromium:mobile",
+              "projectName": "crowncoins:chromium:mobile",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "timedOut",
+                  "duration": 120120,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/src/test-suites/crowncoins/pages/redeem-dialog.ts",
+                        "column": 34,
+                        "line": 39
+                      },
+                      "message": "Error: locator.click: Test timeout of 120000ms exceeded.\nCall log:\n  \u001b[2m- waiting for getByTestId('new-redeem-btn').locator('text=old REDEEM')\u001b[22m\n\n\n\u001b[90m   at \u001b[39mcrowncoins/pages/redeem-dialog.ts:39\n\n\u001b[0m \u001b[90m 37 |\u001b[39m \u001b[90m   */\u001b[39m\n \u001b[90m 38 |\u001b[39m   \u001b[36mpublic\u001b[39m \u001b[36masync\u001b[39m newRedeem() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m     \u001b[36mtry\u001b[39m {\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mnewRedeemButton\u001b[33m.\u001b[39mclick({ timeout\u001b[33m:\u001b[39m \u001b[35m1000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m     } \u001b[36mcatch\u001b[39m (e) {\n \u001b[90m 42 |\u001b[39m       \u001b[36mawait\u001b[39m attachError(test\u001b[33m,\u001b[39m getErrorByCode(\u001b[32m\"RedeemDialog-newRedeemButton-unclickable\"\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at RedeemDialog.newRedeem (/Users/sagivhazut/Documents/GitHub/watchdogs-v2/src/test-suites/crowncoins/pages/redeem-dialog.ts:39:34)\u001b[22m\n\u001b[2m    at /Users/sagivhazut/Documents/GitHub/watchdogs-v2/src/test-suites/crowncoins/tests/redeem/redeem-credit-card.spec.ts:75:24\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-11-11T12:03:59.505Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/playwright-artifacts/tests-redeem-redeem-credit-card-Redeem-via-Credit-Card-crowncoins-chromium-mobile/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-RedeemDialog-newRedeemButton-unclickable",
+                      "contentType": "application/json",
+                      "body": "ewogICJtZXNzYWdlIjogIk5ldyBSZWRlZW0gQnV0dG9uIFVuY2xpY2thYmxlIiwKICAiY29kZSI6ICJSZWRlZW1EaWFsb2ctbmV3UmVkZWVtQnV0dG9uLXVuY2xpY2thYmxlIiwKICAiaW1wYWN0IjogIlVzZXJzIGNhbm5vdCBpbml0aWF0ZSBhIG5ldyByZWRlZW0gcHJvY2VzcywgYWZmZWN0aW5nIHRoZWlyIGFiaWxpdHkgdG8gcmVkZWVtIHJld2FyZHMiLAogICJzdWdnZXN0aW9uIjogIkVuc3VyZSB0aGUgYnV0dG9uIGlzIHByZXNlbnQsIHZpc2libGUsIGFuZCBmdWxseSBpbnRlcmFjdGFibGUgaW4gdGhlIHNwZWNpZmllZCBjb250ZXh0Igp9"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/sagivhazut/Documents/GitHub/watchdogs-v2/playwright-artifacts/tests-redeem-redeem-credit-card-Redeem-via-Credit-Card-crowncoins-chromium-mobile/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e45d4a4b8fdf133f3041-2a12a75e27eac27640a0",
+          "file": "crowncoins/tests/redeem/redeem-credit-card.spec.ts",
+          "line": 64,
+          "column": 7
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-11-11T12:03:58.969Z",
+    "duration": 124699.965,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

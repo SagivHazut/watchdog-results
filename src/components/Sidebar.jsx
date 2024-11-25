@@ -1,93 +1,89 @@
-import React, { useState } from "react";
-import {
-  FaHome,
-  FaChartBar,
-  FaCog,
-  FaDatabase,
-  FaArrowAltCircleRight,
-} from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FaChartBar, FaDatabase, FaHome, FaBars } from "react-icons/fa";
+import { FaTableList } from "react-icons/fa6";
 import "../style/Sidebar.scss";
+import classNames from "classnames";
 
 const Sidebar = () => {
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
+  const [isMobileView, setIsMobileView] = useState(false);
   const location = useLocation();
-  const [openSection, setOpenSection] = useState(null);
 
-  const fakeData = {
-    home: {
+  const routes = {
+    Dashboard: {
       icon: <FaHome />,
-      label: "Home",
-      subItems: ["Dashboard", "Profile", "Messages"],
+      label: "Dashboard",
     },
-    analytics: {
+    PerformanceTrends: {
       icon: <FaChartBar />,
-      label: "Analytics",
-      subItems: ["Overview", "Reports", "Graphs"],
+      label: "Performance Trends",
     },
-    settings: {
-      icon: <FaCog />,
-      label: "Settings",
-      subItems: ["General", "Account", "Privacy"],
+    TestResultsTable: {
+      icon: <FaTableList />,
+      label: "Test Results Table",
     },
-    database: {
+    Database: {
       icon: <FaDatabase />,
       label: "Database",
-      subItems: ["Tables", "Queries", "Backup"],
     },
   };
 
-  const handleToggle = (section) => {
-    setOpenSection(openSection === section ? null : section);
+  // Handle responsive behavior
+  useEffect(() => {
+    const updateView = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    updateView(); // Set initial value
+    window.addEventListener("resize", updateView);
+
+    return () => window.removeEventListener("resize", updateView);
+  }, []);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarExpanded((prevState) => !prevState);
+  };
+
+  const closeSidebar = () => {
+    if (isMobileView) {
+      setIsSidebarExpanded(false);
+    }
   };
 
   const isActive = (section) => location.pathname.startsWith(`/${section}`);
 
   return (
     <div className='container'>
-      <div className='sidebar'>
-        {Object.keys(fakeData).map((section) => (
+      <div onClick={handleSidebarToggle}>
+        {isSidebarExpanded ? (
+          <></>
+        ) : (
+          <div className='hamburger-menu'>
+            <FaBars />
+          </div>
+        )}
+      </div>
+      <div
+        className={classNames("sidebar", {
+          expanded: isSidebarExpanded,
+          collapsed: !isSidebarExpanded,
+        })}
+      >
+        {Object.keys(routes).map((section) => (
           <div
             key={section}
-            className={`sidebar-item ${isActive(section) ? "active" : ""}`}
-            onClick={() => handleToggle(section)}
+            className={classNames("sidebar-item", {
+              active: isActive(section),
+            })}
+            onClick={closeSidebar}
           >
-            <Link
-              to={`/${section}/${fakeData[section].subItems[0].toLowerCase()}`}
-            >
-              {isActive(section) ? (
-                <FaArrowAltCircleRight className='chosenIcon' />
-              ) : (
-                <span className='defaultIcon'>{fakeData[section].icon}</span>
-              )}
+            <Link to={`/${section}`}>
+              <span className='icon'>{routes[section].icon}</span>
             </Link>
           </div>
         ))}
       </div>
-
-      {openSection && (
-        <div className='side-menu'>
-          <div className='mini-section'>
-            <h3>{fakeData[openSection].label}</h3>
-            <ul>
-              {fakeData[openSection].subItems.map((item, index) => {
-                const isActiveTab = location.pathname.endsWith(
-                  `/${item.toLowerCase()}`
-                );
-                return (
-                  <li key={index} className='mini-section-item'>
-                    <Link
-                      className={isActiveTab ? "chosen-mini-tab" : ""}
-                      to={`/${openSection}/${item.toLowerCase()}`}
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

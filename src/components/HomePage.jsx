@@ -1,6 +1,5 @@
 import React from "react";
 import { RealTimeResults } from "./RealTimeResults";
-import { OverAllTests } from "./OverAllTests";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -30,10 +29,6 @@ const HomePage = () => {
     <div className='homePageContainer'>
       <div className='component-wrapper'>
         <RealTimeResults />
-      </div>
-
-      <div className='component-wrapper'>
-        <OverAllTests />
       </div>
     </div>
   );

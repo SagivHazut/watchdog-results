@@ -1,11 +1,10 @@
 .homePageContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  height: fit;
   padding: 20px;
+  box-sizing: border-box;
+  justify-items: center;
 }
-.componentWrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 100px;
+.component-wrapper {
+  width: 85%;
 }

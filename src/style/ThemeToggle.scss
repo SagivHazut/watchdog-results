@@ -1,0 +1,54 @@
+.theme-toggle {
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #ccc;
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  .MuiSwitch-root {
+    width: 60px;
+    height: 24px;
+    padding: 7px;
+
+    .MuiSwitch-switchBase {
+      padding: 0;
+      margin: 0;
+      transform: translateX(5px);
+      top: 13% !important;
+
+      &.Mui-checked {
+        transform: translateX(38px);
+        top: 13% !important;
+      }
+    }
+
+    .MuiSwitch-thumb {
+      width: 22px;
+      height: 22px;
+      background-color: var(--thumb-bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .MuiSwitch-track {
+      border-radius: 20px;
+      background-color: var(--track-bg-color);
+      opacity: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        color: #fff;
+      }
+    }
+  }
+}
