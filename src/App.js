@@ -1,28 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
 import Sidebar from "./components/Sidebar.jsx";
-import routes from "./routes.js";
-import ThemeToggle from "./components/ThemeToggle";
-import { ThemeProvider } from "./components/ThemeContext";
+import routes from "./routes";
 
 function App() {
   return (
     <Router>
-      <div className='App'>
-        <ThemeProvider>
-          <div>
-            <ThemeToggle />
-          </div>
-        </ThemeProvider>
+      <div className='flex bg-gray-900'>
         <Sidebar />
-        <div className='content'>
-          <Routes>
-            {routes.map(({ path, element }, index) => (
-              <Route key={index} path={path} element={element} />
-            ))}
-          </Routes>
-        </div>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
       </div>
     </Router>
   );

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import "../style/OverAllTests.scss";
 
 const initialData = {
   labels: [
@@ -16,7 +15,7 @@ const initialData = {
     "2024-11-01",
     "2024-11-10",
     "2024-11-20",
-    "2024-11-30", // Up to today
+    "2024-11-30",
   ],
   datasets: [
     {
@@ -90,16 +89,23 @@ const OverAllTests = () => {
   const filteredData = filterDataByDateRange(initialData, startDate, endDate);
 
   return (
-    <div className='overall-tests-container'>
-      <div className='date-picker-container'>
-        <h3>Select Date Range</h3>
-        <div className='date-picker'>
-          <label htmlFor='date-range'>Choose Date Range:</label>
+    <div className='flex flex-col items-center w-full p-4 md:p-8 lg:p-12 max-w-screen-lg lg:max-w-5xl mx-auto'>
+      <div className='flex flex-col items-center w-full mb-6'>
+        <h3 className='text-xl md:text-2xl lg:text-3xl mb-4 text-center text-white'>
+          Select Date Range
+        </h3>
+        <div className='flex flex-col items-center w-full max-w-sm lg:max-w-md text-white'>
+          <label
+            htmlFor='date-range'
+            className='text-sm md:text-base font-medium mb-2 text-center'
+          >
+            Choose Date Range:
+          </label>
           <select
             id='date-range'
             value={dateOption}
             onChange={(e) => setDateOption(e.target.value)}
-            className='date-range-select'
+            className='text-black text-sm md:text-base border border-gray-300 rounded-md w-full max-w-xs p-2 text-center shadow-sm focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200'
           >
             <option value='Today'>Today</option>
             <option value='Yesterday'>Yesterday</option>
@@ -111,10 +117,14 @@ const OverAllTests = () => {
         </div>
       </div>
 
-      <div className='charts-container'>
-        <div className='chart'>
-          <h2>Filtered Test Results</h2>
-          <Line data={filteredData} />
+      <div className='flex flex-col items-center w-full	'>
+        <div className='flex flex-col items-center w-full mb-6 p-6 lg:p-8 bg-white border border-gray-300 rounded-lg shadow-md'>
+          <h2 className='text-xl md:text-2xl lg:text-3xl mb-4 text-center text-gray-800'>
+            Filtered Test Results
+          </h2>
+          <div className='w-full max-w-3xl lg:max-w-4xl h-auto'>
+            <Line data={filteredData} />
+          </div>
         </div>
       </div>
     </div>

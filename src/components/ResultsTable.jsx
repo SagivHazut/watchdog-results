@@ -1,5 +1,4 @@
 import React from "react";
-import "../style/ResultsTable.scss";
 
 const ResultsTable = () => {
   const data = [
@@ -11,26 +10,41 @@ const ResultsTable = () => {
   ];
 
   return (
-    <div className='results-table-container'>
-      <h2>Test Results</h2>
-      <table className='results-table'>
-        <thead>
-          <tr>
-            <th>Test Name</th>
-            <th>Result</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, index) => (
-            <tr key={index}>
-              <td>{row.name}</td>
-              <td>{row.result}</td>
-              <td>{row.details}</td>
+    <div className='container mx-auto p-6 bg-gray-900 text-gray-100 rounded-md'>
+      <h2 className='text-2xl font-bold mb-4'>Test Results</h2>
+      <div className='overflow-x-auto'>
+        <table className='w-full border-collapse border border-gray-700'>
+          <thead>
+            <tr className='bg-gray-800 text-left'>
+              <th className='border border-gray-700 px-4 py-2'>Test Name</th>
+              <th className='border border-gray-700 px-4 py-2'>Result</th>
+              <th className='border border-gray-700 px-4 py-2'>Details</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((row, index) => (
+              <tr
+                key={index}
+                className={`${
+                  index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
+                } hover:bg-gray-600`}
+              >
+                <td className='border border-gray-700 px-4 py-2'>{row.name}</td>
+                <td
+                  className={`border border-gray-700 px-4 py-2 font-medium ${
+                    row.result === "Passed" ? "text-green-500" : "text-red-500"
+                  }`}
+                >
+                  {row.result}
+                </td>
+                <td className='border border-gray-700 px-4 py-2'>
+                  {row.details}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

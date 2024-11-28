@@ -39,7 +39,6 @@ export const RealTimeResults = () => {
         <h2>Last Run Results</h2>
         <Pie data={testsData} options={chartOptions} />
       </div>
-
       <ResultsTable />
     </div>
   );
