@@ -89,12 +89,12 @@ const OverAllTests = () => {
   const filteredData = filterDataByDateRange(initialData, startDate, endDate);
 
   return (
-    <div className='flex flex-col items-center w-full p-4 md:p-8 lg:p-12 max-w-screen-lg lg:max-w-5xl mx-auto'>
+    <div className='flex flex-col items-center w-full p-4 md:p-8 lg:p-12 max-w-screen-lg lg:max-w-5xl mx-auto bg-white dark:bg-gray-900 dark:text-white text-gary-900'>
       <div className='flex flex-col items-center w-full mb-6'>
-        <h3 className='text-xl md:text-2xl lg:text-3xl mb-4 text-center text-white'>
+        <h3 className='text-xl md:text-2xl lg:text-3xl mb-4 text-center  '>
           Select Date Range
         </h3>
-        <div className='flex flex-col items-center w-full max-w-sm lg:max-w-md text-white'>
+        <div className='flex flex-col items-center w-full max-w-sm lg:max-w-md '>
           <label
             htmlFor='date-range'
             className='text-sm md:text-base font-medium mb-2 text-center'
@@ -118,8 +118,8 @@ const OverAllTests = () => {
       </div>
 
       <div className='flex flex-col items-center w-full	'>
-        <div className='flex flex-col items-center w-full mb-6 p-6 lg:p-8 bg-white border border-gray-300 rounded-lg shadow-md'>
-          <h2 className='text-xl md:text-2xl lg:text-3xl mb-4 text-center text-gray-800'>
+        <div className='flex flex-col items-center w-full mb-6 p-6 lg:p-8 dark:bg-gray-900  border border-gray-300 rounded-lg shadow-md'>
+          <h2 className='text-xl md:text-2xl lg:text-3xl mb-4 text-center '>
             Filtered Test Results
           </h2>
           <div className='w-full max-w-3xl lg:max-w-4xl h-auto'>

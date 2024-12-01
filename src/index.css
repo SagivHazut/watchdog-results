@@ -15,3 +15,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.homePageContainer {
+  @apply flex flex-col items-center justify-center;
+
+  .component-wrapper {
+    @apply w-full max-w-4xl mx-auto;
+  }
+}

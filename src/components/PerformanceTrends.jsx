@@ -3,7 +3,7 @@ import OverAllTests from "./OverAllTests";
 
 export const PerformanceTrends = () => {
   return (
-    <div className='flex flex-col items-center w-full	'>
+    <div className='flex flex-col items-center w-full bg-white dark:bg-gray-900 dark:text-white text-gary-900'>
       <OverAllTests />
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import routes from "../routes";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,43 +14,31 @@ const Sidebar = () => {
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
-
+  const env = ["crowncoins", "icasino"];
   return (
     <div className='flex h-screen bg-gray-900'>
-      {/* Hamburger Menu Button for Mobile */}
-      <button
-        className='absolute top-4 left-4 z-30 text-gray-100 focus:outline-none md:hidden'
-        onClick={toggleSidebar}
-      >
-        <svg
-          className='w-6 h-6'
-          fill='none'
-          stroke='currentColor'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-          xmlns='http://www.w3.org/2000/svg'
+      {!isOpen ? (
+        <button
+          className='absolute w-fit top-4 left-4 z-30 text-gray-700 focus:outline-none md:hidden'
+          onClick={toggleSidebar}
         >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            d='M4 6h16M4 12h16m-7 6h7'
-          ></path>
-        </svg>
-      </button>
-
-      {/* Sidebar */}
+          <GiHamburgerMenu size={22} />
+        </button>
+      ) : (
+        <></>
+      )}
       <div
         className={`fixed inset-y-0 left-0 w-64 bg-gray-800 text-gray-100 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 md:relative md:translate-x-0 z-20`}
       >
         <div className='p-4'>
-          <h1 className='text-lg font-bold'>Dashboard</h1>
+          <h1 className='text-lg font-bold'>{env ? env : "crowncoins"}</h1>
         </div>
         <nav>
           <ul>
             {routes.map((item) => (
-              <li key={item.name}>
+              <li key={item}>
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>

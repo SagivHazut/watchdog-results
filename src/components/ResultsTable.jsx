@@ -10,12 +10,12 @@ const ResultsTable = () => {
   ];
 
   return (
-    <div className='container mx-auto p-6 bg-gray-900 text-gray-100 rounded-md'>
+    <div className='container mx-auto p-6 dark:bg-gray-900 dark:text-white text-gary-900 rounded-md'>
       <h2 className='text-2xl font-bold mb-4'>Test Results</h2>
       <div className='overflow-x-auto'>
         <table className='w-full border-collapse border border-gray-700'>
           <thead>
-            <tr className='bg-gray-800 text-left'>
+            <tr className='dark:bg-gray-900  text-left'>
               <th className='border border-gray-700 px-4 py-2'>Test Name</th>
               <th className='border border-gray-700 px-4 py-2'>Result</th>
               <th className='border border-gray-700 px-4 py-2'>Details</th>
@@ -26,8 +26,10 @@ const ResultsTable = () => {
               <tr
                 key={index}
                 className={`${
-                  index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
-                } hover:bg-gray-600`}
+                  index % 2 === 0
+                    ? "dark:bg-gray-900 dark:text-white "
+                    : "bg-gray-900 dark:bg-white dark:text-gray-900 text-white"
+                } hover:bg-gray-300 hover:dark:bg-gray-300 `}
               >
                 <td className='border border-gray-700 px-4 py-2'>{row.name}</td>
                 <td

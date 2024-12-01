@@ -17,12 +17,12 @@ const routes = [
   {
     path: "/PerformanceTrends",
     element: <PerformanceTrends />,
-    name: "Test Details",
+    name: "Performance",
   },
   {
     path: "/TestResultsTable",
     element: <TestResultsTable />,
-    name: "Test Details",
+    name: "Analyst",
   },
 ];
 

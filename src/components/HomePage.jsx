@@ -26,10 +26,8 @@ ChartJS.register(
 
 const HomePage = () => {
   return (
-    <div className='homePageContainer'>
-      <div className='component-wrapper'>
-        <RealTimeResults />
-      </div>
+    <div className='homePageContainer bg-white dark:bg-gray-900 dark:text-white text-gary-900 min-h-screen transition-all'>
+      <RealTimeResults />
     </div>
   );
 };
