@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import routes from "../routes";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useEnvironment } from "../libs/EnvironmentContext";
+import routes from "../routes";
 
 const Sidebar = () => {
+  const { environment, setEnvironment } = useEnvironment(); // Access environment and updater
   const [isOpen, setIsOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
+
+  const handleEnvironmentChange = (env) => {
+    setEnvironment(env); // Update environment
+    setIsDrawerOpen(false); // Close the drawer after selection
   };
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-  };
-  const env = ["crowncoins", "icasino"];
   return (
-    <div className='flex h-screen bg-gray-900'>
-      {!isOpen ? (
+    <div className='flex top-0 sticky h-screen bg-gray-900'>
+      {!isOpen && (
         <button
-          className='absolute w-fit top-4 left-4 z-30 text-gray-700 focus:outline-none md:hidden'
+          className='absolute w-fit top-2 left-4 z-30 text-gray-700 focus:outline-none md:hidden'
           onClick={toggleSidebar}
         >
           <GiHamburgerMenu size={22} />
         </button>
-      ) : (
-        <></>
       )}
       <div
         className={`fixed inset-y-0 left-0 w-64 bg-gray-800 text-gray-100 transform ${
@@ -33,14 +33,16 @@ const Sidebar = () => {
         } transition-transform duration-300 md:relative md:translate-x-0 z-20`}
       >
         <div className='p-4'>
-          <h1 className='text-lg font-bold'>{env ? env : "crowncoins"}</h1>
+          <h1 className='text-lg font-bold'>
+            {environment ? environment.toUpperCase() : "LOADING..."}
+          </h1>
         </div>
         <nav>
           <ul>
-            {routes.map((item) => (
-              <li key={item}>
+            {routes.map((route) => (
+              <li key={route.path}>
                 <NavLink
-                  to={item.path}
+                  to={route.path}
                   className={({ isActive }) =>
                     `block px-4 py-2 text-sm rounded ${
                       isActive ? "bg-gray-700" : "hover:bg-gray-700"
@@ -48,18 +50,34 @@ const Sidebar = () => {
                   }
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.name}
+                  {route.name}
                 </NavLink>
               </li>
             ))}
           </ul>
         </nav>
         <div className='absolute bottom-0 w-full p-4 border-t border-gray-700'>
+          {isDrawerOpen && (
+            <div className='mb-4 space-y-2'>
+              <button
+                className='w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded'
+                onClick={() => handleEnvironmentChange("crowncoins")}
+              >
+                CrownCoins
+              </button>
+              <button
+                className='w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded'
+                onClick={() => handleEnvironmentChange("icasino")}
+              >
+                ICasino
+              </button>
+            </div>
+          )}
           <button
             onClick={toggleDrawer}
             className='w-full bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded flex justify-between items-center'
           >
-            Select Environment
+            Change Environment
             <svg
               className={`w-5 h-5 transform transition-transform ${
                 isDrawerOpen ? "rotate-0" : "-rotate-180"
@@ -77,28 +95,6 @@ const Sidebar = () => {
               />
             </svg>
           </button>
-          {isDrawerOpen && (
-            <div className='absolute bottom-16 w-5/6 bg-gray-700 rounded-lg p-4 space-y-2 shadow'>
-              <button
-                className='w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded shadow'
-                onClick={toggleDrawer}
-              >
-                CrownCoins Dev
-              </button>
-              <button
-                className='w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded shadow'
-                onClick={toggleDrawer}
-              >
-                ICasino Dev
-              </button>
-              {/* <button className='w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded shadow'>
-                CrownCoins Prod
-              </button>
-              <button className='w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded shadow'>
-                ICasino Prod
-              </button> */}
-            </div>
-          )}
         </div>
       </div>
 

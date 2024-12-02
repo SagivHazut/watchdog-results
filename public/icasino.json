@@ -1,0 +1,14 @@
+[
+  {
+    "code": "LoginPage-loginButton-disabled",
+    "message": "Login Button Disabled",
+    "status": "Passed",
+    "date": "2024-11-19 10:15:00",
+    "duration": "5s",
+    "context": "The login button remained disabled after entering valid credentials.",
+    "impact": "Users are unable to log in, causing frustration and preventing application use.",
+    "suggestion": "Ensure the login button is enabled once credentials are valid.",
+    "screenshotUrl": "/screenshots/login-button-disabled.png",
+    "videoUrl": "/videos/login-button-disabled.mp4"
+  }
+]

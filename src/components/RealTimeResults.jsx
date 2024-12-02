@@ -3,17 +3,26 @@ import { Pie } from "react-chartjs-2";
 import ResultsTable from "./ResultsTable";
 import "../style/Charts.scss";
 
-export const RealTimeResults = () => {
+export const RealTimeResults = ({ data }) => {
   const chartOptions = {
     maintainAspectRatio: false,
   };
 
-  const testsData = {
-    labels: ["Payments", "Redeem", "Auth", "Buttons", "Games"],
+  // Transform data to generate chart inputs
+  const categories = ["Payments", "Redeem", "Auth", "Buttons", "Games"];
+  const categoryCounts = categories.map(
+    (category) =>
+      data.filter((item) =>
+        item.code.toLowerCase().includes(category.toLowerCase())
+      ).length
+  );
+
+  const pieData = {
+    labels: categories,
     datasets: [
       {
         label: "Last Run Results",
-        data: [20, 8, 4, 10, 25],
+        data: categoryCounts,
         backgroundColor: [
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
@@ -37,9 +46,9 @@ export const RealTimeResults = () => {
     <div className='real-time-results'>
       <div className='chart-wrapper'>
         <h2>Last Run Results</h2>
-        <Pie data={testsData} options={chartOptions} />
+        <Pie data={pieData} options={chartOptions} />
       </div>
-      <ResultsTable />
+      <ResultsTable data={data} />
     </div>
   );
 };

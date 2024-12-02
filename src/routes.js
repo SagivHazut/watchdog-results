@@ -1,4 +1,3 @@
-// routes.js
 import HomePage from "./components/HomePage.jsx";
 import PerformanceTrends from "./components/PerformanceTrends.jsx";
 import TestResultsTable from "./components/TestRunsOverview.jsx";
@@ -11,17 +10,17 @@ const routes = [
   },
   {
     path: "/Dashboard",
-    element: <HomePage />,
+    component: HomePage,
     name: "Dashboard",
   },
   {
     path: "/PerformanceTrends",
-    element: <PerformanceTrends />,
+    component: PerformanceTrends,
     name: "Performance",
   },
   {
     path: "/TestResultsTable",
-    element: <TestResultsTable />,
+    component: TestResultsTable,
     name: "Analyst",
   },
 ];

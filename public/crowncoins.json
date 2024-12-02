@@ -1,0 +1,122 @@
+[
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Failed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  },
+  {
+    "code": "RedeemDialog-redeemWithIbtButton-unclickable",
+    "message": "Redeem with IBT Button Unclickable",
+    "status": "Passed",
+    "date": "2024-11-20 14:32:00",
+    "duration": "15s",
+    "context": "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
+    "impact": "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
+    "suggestion": "Ensure the button is present, visible, and fully interactable in the specified context.",
+    "screenshotUrl": "/artifacts/test-failed-1.png",
+    "videoUrl": "/artifacts/video.webm"
+  }
+]

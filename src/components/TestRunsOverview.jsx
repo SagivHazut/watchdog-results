@@ -4,40 +4,7 @@ import ImageZoom from "./ImageZoom";
 import image from "../artifacts/test-failed-1.png";
 import video from "../artifacts/video.webm";
 
-const TestResultsTable = () => {
-  const testResults = [
-    {
-      code: "RedeemDialog-redeemWithIbtButton-unclickable",
-      message: "Redeem with IBT Button Unclickable",
-      status: "Failed",
-      date: "2024-11-20 14:32:00",
-      duration: "15s",
-      context:
-        "Unable to click on the 'Redeem with IBT' button; it may not be visible or clickable.",
-      impact:
-        "Users cannot initiate the redeem process using IBT, affecting their ability to redeem rewards.",
-      suggestion:
-        "Ensure the button is present, visible, and fully interactable in the specified context.",
-      screenshotUrl: image,
-      videoUrl: video,
-    },
-    {
-      code: "LoginPage-loginButton-disabled",
-      message: "Login Button Disabled",
-      status: "Passed",
-      date: "2024-11-19 10:15:00",
-      duration: "5s",
-      context:
-        "The login button remained disabled after entering valid credentials.",
-      impact:
-        "Users are unable to log in, causing frustration and preventing application use.",
-      suggestion:
-        "Ensure the login button is enabled once credentials are valid.",
-      screenshotUrl: "/screenshots/login-button-disabled.png",
-      videoUrl: "/videos/login-button-disabled.mp4",
-    },
-  ];
-
+const TestResultsTable = ({ environment, data }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedResult, setSelectedResult] = useState(null);
   const [zoomedImage, setZoomedImage] = useState(null);
@@ -78,6 +45,9 @@ const TestResultsTable = () => {
       document.removeEventListener("keydown", handleEsc);
     };
   }, [zoomedImage, drawerOpen]);
+  if (!data) {
+    return <p>Loading data for {environment}...</p>;
+  }
   return (
     <div className='p-4 bg-white dark:bg-gray-900 transition-all dark:text-white text-gray-900 min-h-screen w-full'>
       <div className='overflow-x-auto'>
@@ -93,7 +63,7 @@ const TestResultsTable = () => {
             </tr>
           </thead>
           <tbody>
-            {testResults.map((result) => (
+            {data.map((result) => (
               <tr
                 key={result.code}
                 className={`cursor-pointer ${

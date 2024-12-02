@@ -1,5 +1,6 @@
 import React from "react";
 import { RealTimeResults } from "./RealTimeResults";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,10 +25,13 @@ ChartJS.register(
   Legend
 );
 
-const HomePage = () => {
+const HomePage = ({ environment, data }) => {
+  if (!data) {
+    return <p>Loading data for {environment}...</p>;
+  }
   return (
     <div className='homePageContainer bg-white dark:bg-gray-900 dark:text-white text-gary-900 min-h-screen transition-all'>
-      <RealTimeResults />
+      <RealTimeResults data={data} />
     </div>
   );
 };
