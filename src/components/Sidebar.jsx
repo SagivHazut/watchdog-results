@@ -5,7 +5,7 @@ import { useEnvironment } from "../libs/EnvironmentContext";
 import routes from "../routes";
 
 const Sidebar = () => {
-  const { environment, setEnvironment } = useEnvironment(); // Access environment and updater
+  const { environment, setEnvironment } = useEnvironment();
   const [isOpen, setIsOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -13,8 +13,8 @@ const Sidebar = () => {
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
 
   const handleEnvironmentChange = (env) => {
-    setEnvironment(env); // Update environment
-    setIsDrawerOpen(false); // Close the drawer after selection
+    setEnvironment(env);
+    setIsDrawerOpen(false);
   };
 
   return (

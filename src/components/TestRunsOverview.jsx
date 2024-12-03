@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ErrorPopup from "./ErrorPopup";
 import ImageZoom from "./ImageZoom";
-import image from "../artifacts/test-failed-1.png";
-import video from "../artifacts/video.webm";
 
 const TestResultsTable = ({ environment, data }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -28,12 +26,9 @@ const TestResultsTable = ({ environment, data }) => {
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.key === "Escape") {
-        // Close zoom modal if open
         if (zoomedImage) {
           handleZoomClose();
-        }
-        // Close details modal if open and zoom modal is not open
-        else if (drawerOpen) {
+        } else if (drawerOpen) {
           handleDrawerClose();
         }
       }
@@ -49,7 +44,10 @@ const TestResultsTable = ({ environment, data }) => {
     return <p>Loading data for {environment}...</p>;
   }
   return (
-    <div className='p-4 bg-white dark:bg-gray-900 transition-all dark:text-white text-gray-900 min-h-screen w-full'>
+    <div
+      key={environment}
+      className='p-4 bg-white dark:bg-gray-900 transition-all dark:text-white text-gray-900 min-h-screen w-full'
+    >
       <div className='overflow-x-auto'>
         <table className='table-auto w-full border-collapse border border-gray-700'>
           <thead>
@@ -63,11 +61,11 @@ const TestResultsTable = ({ environment, data }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((result) => (
+            {data.map((result, index) => (
               <tr
-                key={result.code}
+                key={`${result.code}-${index}`}
                 className={`cursor-pointer ${
-                  result.status === "Failed"
+                  index % 2 === 0
                     ? "bg-gray-900 text-white"
                     : "bg-white text-gray-900"
                 } hover:bg-gray-300 dark:hover:bg-gray-700`}

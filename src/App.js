@@ -11,7 +11,6 @@ const AppRoutes = () => {
     <Routes>
       {routes.map((route, index) => {
         if (route.component) {
-          // Dynamically inject props into components
           return (
             <Route
               key={index}

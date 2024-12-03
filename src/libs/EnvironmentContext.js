@@ -13,7 +13,9 @@ export const useEnvironment = () => {
 };
 
 export const EnvironmentProvider = ({ children }) => {
-  const [environment, setEnvironment] = useState("crowncoins");
+  const [environment, setEnvironment] = useState(() => {
+    return localStorage.getItem("environment") || "crowncoins";
+  });
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -33,7 +35,12 @@ export const EnvironmentProvider = ({ children }) => {
     };
 
     fetchData();
-  }, [environment]); // Re-fetch when environment changes
+  }, [environment]);
+
+  useEffect(() => {
+    localStorage.setItem("environment", environment);
+    localStorage.setItem("data", data);
+  }, [environment, data]);
 
   return (
     <EnvironmentContext.Provider value={{ environment, setEnvironment, data }}>

@@ -7,7 +7,7 @@ export const PerformanceTrends = ({ environment, data }) => {
   }
   return (
     <div className='flex flex-col items-center w-full bg-white dark:bg-gray-900 dark:text-white text-gary-900'>
-      <OverAllTests />
+      <OverAllTests data={data} />
     </div>
   );
 };
