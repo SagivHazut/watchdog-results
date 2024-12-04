@@ -2,7 +2,7 @@ import React from "react";
 
 const ResultsTable = ({ data }) => {
   return (
-    <div>
+    <div className='w-11/12'>
       <h2 className='text-2xl font-bold mb-4'>Test Results</h2>
       <div className='overflow-x-auto'>
         <table className='w-full border-collapse border border-gray-700'>

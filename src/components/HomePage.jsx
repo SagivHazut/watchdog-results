@@ -12,7 +12,6 @@ import {
   Legend,
   ArcElement,
 } from "chart.js";
-import "../style/Homepage.scss";
 
 ChartJS.register(
   CategoryScale,
@@ -30,7 +29,7 @@ const HomePage = ({ environment, data }) => {
     return <p>Loading data for {environment}...</p>;
   }
   return (
-    <div className='homePageContainer bg-white dark:bg-gray-900 dark:text-white text-gary-900 min-h-screen transition-all'>
+    <div className='flex flex-col  mt-8 items-center w-full bg-white dark:bg-gray-900 dark:text-white text-gary-900'>
       <RealTimeResults data={data} />
     </div>
   );

@@ -32,7 +32,7 @@ const App = () => {
   return (
     <EnvironmentProvider>
       <Router>
-        <div className='flex bg-gray-900'>
+        <div className='flex bg-white dark:bg-gray-900 text-black dark:text-white t'>
           <Sidebar />
           <AppRoutes />
           <div className='absolute right-0 z-index-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-all'>
